@@ -16,7 +16,7 @@ void trim(char *strIn, char *strOut){
 
     temp = strIn + strlen(strIn) - 1; //得到原字符串最后一个字符的指针(不是'\0')
 
-    while (*temp == ' '){
+    while (*temp == ' '||*temp == '\n'){
         --temp;
     }
 
