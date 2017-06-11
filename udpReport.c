@@ -31,7 +31,7 @@
 #define MAXBUF 1500
 #define DEV_SIZE 6
 #define APP_VERSION 1
-#define SERVER_IP "192.168.2.198" //sintai
+#define SERVER_IP "192.168.1.198" //sintai
 
 typedef struct
 {
@@ -804,11 +804,11 @@ int main(int argc, char *argv[])
           system("/usr/sbin/updateUdpReport.sh &");
         }
       }
-      sleep(10);
+      sleep(55);
     }
     else
     {
-      sleep(5);
+      sleep(60);
       //break;
     }
   }

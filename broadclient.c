@@ -27,7 +27,7 @@ int main()
 		struct sockaddr_in from;
 	bzero(&from, sizeof(struct sockaddr_in));
 	from.sin_family = AF_INET;
-	from.sin_addr.s_addr = htonl(INADDR_ANY);
+//	from.sin_addr.s_addr = htonl(INADDR_ANY);
 	from.sin_port = htons(10001);
 
 	const int opt = 1;
@@ -43,7 +43,9 @@ int main()
 	struct sockaddr_in addrto;
 	bzero(&addrto, sizeof(struct sockaddr_in));
 	addrto.sin_family=AF_INET;
-	addrto.sin_addr.s_addr=htonl(INADDR_BROADCAST);
+        
+	addrto.sin_addr.s_addr=inet_addr("192.168.1.255");
+//addrto.sin_addr.s_addr=htonl(INADDR_BROADCAST);
 	addrto.sin_port=htons(10001);
 	int nlen=sizeof(addrto);
 
@@ -65,6 +67,8 @@ char smsg1[100] = {0};
 struct timeval timeout={4,0};
 setsockopt(sock,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
 int index = 0;
+	len=sizeof(addrto);
+
         while(1)
         {
                 //从广播地址发送消息
