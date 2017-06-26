@@ -9,7 +9,7 @@ import (
 
 const (
 	API_SERVER = "http://x.x.x"
-	UDP_PORT   = 1234
+	UDP_PORT   = 9998
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 			continue
 		}
 
-		//		go forward(string(data[:read]))
+		fmt.Println(string(data[:read]))
 	}
 }
 

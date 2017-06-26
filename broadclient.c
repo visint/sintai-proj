@@ -27,7 +27,7 @@ int main()
 		struct sockaddr_in from;
 	bzero(&from, sizeof(struct sockaddr_in));
 	from.sin_family = AF_INET;
-//	from.sin_addr.s_addr = htonl(INADDR_ANY);
+	from.sin_addr.s_addr = htonl(INADDR_ANY);
 	from.sin_port = htons(10001);
 
 	const int opt = 1;
@@ -44,8 +44,8 @@ int main()
 	bzero(&addrto, sizeof(struct sockaddr_in));
 	addrto.sin_family=AF_INET;
         
-	addrto.sin_addr.s_addr=inet_addr("192.168.1.255");
-//addrto.sin_addr.s_addr=htonl(INADDR_BROADCAST);
+//	addrto.sin_addr.s_addr=inet_addr("192.168.3.255");
+        addrto.sin_addr.s_addr=htonl(INADDR_BROADCAST);
 	addrto.sin_port=htons(10001);
 	int nlen=sizeof(addrto);
 
